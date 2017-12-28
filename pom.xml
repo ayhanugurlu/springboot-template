@@ -11,7 +11,7 @@
     <modules>
         <module>springboot-template-data</module>
         <module>springboot-template-service</module>
-        <module>springboot-template-api</module>
+        <module>springboot-template-web</module>
     </modules>
 
 </project>

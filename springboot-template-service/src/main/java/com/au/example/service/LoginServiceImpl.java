@@ -2,13 +2,14 @@ package com.au.example.service;
 
 
 import com.au.example.common.SessionState;
-import com.au.example.dto.LoginInputDTO;
-import com.au.example.dto.LoginOutputDTO;
+import com.au.example.dto.*;
 import com.au.example.mongo.User;
 import com.au.example.mongo.UserSession;
 import com.au.example.repository.UserRepository;
 import com.au.example.repository.UserSessionRepository;
+import ma.glasnost.orika.MapperFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -21,6 +22,10 @@ public class LoginServiceImpl implements LoginService {
 
     @Autowired
     UserSessionRepository userSessionRepository;
+
+    @Autowired
+    @Qualifier("loginServiceMapper")
+    MapperFacade mapperFacade;
 
     @Override
     public LoginOutputDTO login(LoginInputDTO loginInputDTO) {
@@ -36,10 +41,27 @@ public class LoginServiceImpl implements LoginService {
                 userSessionRepository.save(userSession);
             }
             LoginOutputDTO loginOutputDTO = new LoginOutputDTO();
-            loginOutputDTO.setUserId(user.getId());
-            loginOutputDTO.setUserSessionId(userSession.getToken());
+            loginOutputDTO.setToken("");
+
             return loginOutputDTO;
         }
         return null;
     }
+
+    @Override
+    public CreateUserOutputDTO create(CreateUserInputDTO createUserInputDTO) {
+        User user = mapperFacade.map(createUserInputDTO, User.class);
+        userRepository.save(user);
+        CreateUserOutputDTO createUserOutputDTO = mapperFacade.map(user, CreateUserOutputDTO.class);
+        return createUserOutputDTO;
+    }
+
+    @Override
+    public UserDTO findByUsername(String userName) {
+        User user = userRepository.findByUsername(userName);
+        UserDTO userDTO = mapperFacade.map(user, UserDTO.class);
+        return userDTO;
+    }
+
+
 }

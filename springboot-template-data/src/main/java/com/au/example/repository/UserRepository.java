@@ -8,8 +8,12 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface UserRepository extends MongoRepository<User, String> {
 
-    User findByUsernameAndPassword(String firstName,String password);
+    User findByUsernameAndPassword(String firstName, String password);
+
+
+    User findByUsername(String firstName);
 
     User save(User user);
+
 
 }
