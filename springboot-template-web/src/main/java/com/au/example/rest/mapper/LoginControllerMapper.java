@@ -1,13 +1,11 @@
 package com.au.example.rest.mapper;
 
-import com.au.example.dto.CreateUserInputDTO;
-import com.au.example.dto.CreateUserOutputDTO;
-import com.au.example.dto.LoginInputDTO;
-import com.au.example.dto.LoginOutputDTO;
+import com.au.example.dto.*;
 import com.au.example.rest.model.req.CreateUserReq;
 import com.au.example.rest.model.req.LoginReq;
 import com.au.example.rest.model.resp.CreateUserResp;
 import com.au.example.rest.model.resp.LoginResp;
+import com.au.example.rest.model.resp.UserInfoResp;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.ConfigurableMapper;
 import org.springframework.stereotype.Component;
@@ -33,6 +31,10 @@ public class LoginControllerMapper extends ConfigurableMapper {
                 .register();
 
         factory.classMap(CreateUserResp.class, CreateUserOutputDTO.class)
+                .byDefault()
+                .register();
+
+        factory.classMap(UserInfoResp.class, UserDTO.class)
                 .byDefault()
                 .register();
     }

@@ -12,10 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class LoginServiceImpl implements LoginService,LoginServiceExt {
+public class UserServiceImpl implements UserService,LoginServiceExt {
 
     @Autowired
     UserRepository userRepository;
@@ -57,11 +59,19 @@ public class LoginServiceImpl implements LoginService,LoginServiceExt {
     }
 
     @Override
-    public UserDTO findByUsername(String userName) {
-        User user = userRepository.findByUsername(userName);
-        UserDTO userDTO = mapperFacade.map(user, UserDTO.class);
+    public List<UserDTO> getAllUser() {
+        List<User> user = userRepository.findAll();
+        List<UserDTO> userDTO = mapperFacade.mapAsList(user, UserDTO.class);
         return userDTO;
     }
 
 
+    @Override
+    public UserDTO findByUsername(String userName) {
+        User user = userRepository.findByUsername(userName);
+        if(user == null){
+            return  null;
+        }
+        return  mapperFacade.map(user,UserDTO.class);
+    }
 }

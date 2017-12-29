@@ -6,7 +6,7 @@ import com.au.example.dto.LoginInputDTO;
 import com.au.example.dto.LoginOutputDTO;
 import com.au.example.rest.model.req.LoginReq;
 import com.au.example.rest.model.resp.LoginResp;
-import com.au.example.service.LoginService;
+import com.au.example.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ma.glasnost.orika.MapperFacade;
 import org.junit.Before;
@@ -14,8 +14,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.cloud.sleuth.Span;
@@ -54,7 +52,7 @@ public class LoginControllerTest {
     private Span span;
 
     @MockBean
-    LoginService loginService;
+    UserService userService;
 
 
     @Autowired
@@ -67,7 +65,7 @@ public class LoginControllerTest {
 
     @Before
     public void setupMock(){
-        //ReflectionTestUtils.setField(loginService,"mapperFacade",loginControllerMapper);
+        //ReflectionTestUtils.setField(userService,"mapperFacade",loginControllerMapper);
 
         LoginOutputDTO loginOutputDTO = new LoginOutputDTO();
         loginOutputDTO.setToken("token");
@@ -87,7 +85,7 @@ public class LoginControllerTest {
 
 
         when(mapperFacade.map(loginReq, LoginInputDTO.class)).thenReturn(loginInputDTO);
-        when(loginService.login(any(LoginInputDTO.class))).thenReturn(loginOutputDTO);
+        when(userService.login(any(LoginInputDTO.class))).thenReturn(loginOutputDTO);
         when(mapperFacade.map(loginOutputDTO, LoginResp.class)).thenReturn(loginResp);
 
         when(span.getTraceId()).thenReturn(1l);
