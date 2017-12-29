@@ -1,1 +1,3 @@
-![alt text](https://travis-ci.org/ayhanugurlu/interview-example.svg?branch=master "Travis Status")
+![alt text](https://travis-ci.org/ayhanugurlu/springboot-template.svg?branch=master "Travis Status")
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/ayhanugurlu/springboot-template?branch=master)]

@@ -10,10 +10,10 @@
 
     <modules>
         <module>springboot-template-data</module>
+        <module>springboot-template-service-api</module>
         <module>springboot-template-service</module>
-        <module>springboot-template-web</module>
         <module>springboot-template-security-jwt</module>
-        <module>springboot-template-service-ext</module>
+        <module>springboot-template-web</module>
     </modules>
 
 </project>

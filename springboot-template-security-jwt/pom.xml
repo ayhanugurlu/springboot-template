@@ -39,7 +39,7 @@
 
         <dependency>
             <groupId>com.au.example</groupId>
-            <artifactId>springboot-template-service-ext</artifactId>
+            <artifactId>springboot-template-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
