@@ -1,0 +1,1 @@
+![alt text](https://travis-ci.org/ayhanugurlu/interview-example.svg?branch=master "Travis Status")
