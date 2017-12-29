@@ -1,4 +1,4 @@
-package com.au.example.rest.security;
+package com.au.example.security;
 
 
 
@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.au.example.rest.security.SecurityConstants.HEADER_STRING;
-import static com.au.example.rest.security.SecurityConstants.TOKEN_PREFIX;
-import static com.au.example.rest.security.SecurityConstants.SECRET;
+import static com.au.example.security.SecurityConstants.HEADER_STRING;
+import static com.au.example.security.SecurityConstants.TOKEN_PREFIX;
+import static com.au.example.security.SecurityConstants.SECRET;
 
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {

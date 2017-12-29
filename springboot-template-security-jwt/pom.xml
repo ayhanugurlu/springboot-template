@@ -3,8 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -12,9 +10,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.au.example</groupId>
-    <artifactId>springboot-template-service</artifactId>
+    <artifactId>springboot-template-security-jwt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
 
     <properties>
@@ -23,16 +23,18 @@
         <java.version>1.8</java.version>
     </properties>
 
+
     <dependencies>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.au.example</groupId>
-            <artifactId>springboot-template-data</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <dependency>
@@ -42,13 +44,11 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/ma.glasnost.orika/orika-core -->
         <dependency>
-            <groupId>ma.glasnost.orika</groupId>
-            <artifactId>orika-core</artifactId>
-            <version>1.5.1</version>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
         </dependency>
-
         <!--Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -59,7 +59,4 @@
 
 
     </dependencies>
-
-
-
 </project>

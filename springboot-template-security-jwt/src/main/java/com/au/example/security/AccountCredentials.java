@@ -1,4 +1,4 @@
-package com.au.example.rest.security;
+package com.au.example.security;
 
 import lombok.Data;
 

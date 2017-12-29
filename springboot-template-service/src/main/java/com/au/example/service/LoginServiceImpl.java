@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
-public class LoginServiceImpl implements LoginService {
+public class LoginServiceImpl implements LoginService,LoginServiceExt {
 
     @Autowired
     UserRepository userRepository;

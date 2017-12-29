@@ -1,4 +1,4 @@
-package com.au.example.rest.security;
+package com.au.example.security;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static com.au.example.rest.security.SecurityConstants.*;
+import static com.au.example.security.SecurityConstants.*;
 
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {

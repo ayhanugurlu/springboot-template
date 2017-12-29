@@ -4,14 +4,11 @@ import com.au.example.dto.CreateUserInputDTO;
 import com.au.example.dto.CreateUserOutputDTO;
 import com.au.example.dto.LoginInputDTO;
 import com.au.example.dto.LoginOutputDTO;
-import com.au.example.rest.common.Constants;
 import com.au.example.rest.exception.InvalidUserNameOrPassword;
 import com.au.example.rest.model.req.CreateUserReq;
 import com.au.example.rest.model.req.LoginReq;
 import com.au.example.rest.model.resp.CreateUserResp;
 import com.au.example.rest.model.resp.LoginResp;
-
-
 import com.au.example.service.LoginService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -21,9 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.sleuth.Tracer;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

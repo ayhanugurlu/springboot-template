@@ -10,5 +10,5 @@ public interface LoginService {
 
     CreateUserOutputDTO create(CreateUserInputDTO createUserInputDTO);
 
-    UserDTO findByUsername(String userName);
+
 }

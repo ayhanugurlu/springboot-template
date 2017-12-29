@@ -1,7 +1,7 @@
-package com.au.example.rest.security;
+package com.au.example.security;
 
 import com.au.example.dto.UserDTO;
-import com.au.example.service.LoginService;
+import com.au.example.service.LoginServiceExt;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,9 +12,9 @@ import static java.util.Collections.emptyList;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private LoginService  loginService;
+    private LoginServiceExt loginService;
 
-    public UserDetailsServiceImpl(LoginService  loginService) {
+    public UserDetailsServiceImpl(LoginServiceExt loginService) {
         this.loginService = loginService;
     }
 
