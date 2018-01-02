@@ -4,6 +4,7 @@ package com.au.example.rest.controller;
 import com.au.example.SpringBootTemplateWebApplication;
 import com.au.example.dto.LoginInputDTO;
 import com.au.example.dto.LoginOutputDTO;
+import com.au.example.exception.InvalidUserNameOrPassword;
 import com.au.example.rest.model.req.LoginReq;
 import com.au.example.rest.model.resp.LoginResp;
 import com.au.example.service.UserService;
@@ -34,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers  =LoginController.class,secure = false)
+@WebMvcTest(controllers  = UserController.class,secure = false)
 @ContextConfiguration(classes = SpringBootTemplateWebApplication.class)
 public class LoginControllerTest {
 
@@ -57,14 +58,14 @@ public class LoginControllerTest {
 
     @Autowired
     @InjectMocks
-    LoginController loginController;
+    UserController loginController;
 
 
 
     private LoginReq loginReq;
 
     @Before
-    public void setupMock(){
+    public void setupMock() throws InvalidUserNameOrPassword {
         //ReflectionTestUtils.setField(userService,"mapperFacade",loginControllerMapper);
 
         LoginOutputDTO loginOutputDTO = new LoginOutputDTO();

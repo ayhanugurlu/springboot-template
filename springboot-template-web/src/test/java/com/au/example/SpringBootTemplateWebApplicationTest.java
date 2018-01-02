@@ -1,6 +1,6 @@
 package com.au.example;
 
-import com.au.example.rest.controller.LoginController;
+import com.au.example.rest.controller.UserController;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SpringBootTemplateWebApplicationTest {
 
     @Autowired
-    LoginController loginController;
+    UserController loginController;
 
     @Test
     public void contextLoads() {

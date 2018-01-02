@@ -3,6 +3,8 @@ package com.au.example.service;
 
 import com.au.example.common.SessionState;
 import com.au.example.dto.*;
+import com.au.example.exception.DuplicateUser;
+import com.au.example.exception.InvalidUserNameOrPassword;
 import com.au.example.mongo.User;
 import com.au.example.mongo.UserSession;
 import com.au.example.repository.UserRepository;
@@ -13,7 +15,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService,LoginServiceExt {
     MapperFacade mapperFacade;
 
     @Override
-    public LoginOutputDTO login(LoginInputDTO loginInputDTO) {
+    public LoginOutputDTO login(LoginInputDTO loginInputDTO) throws InvalidUserNameOrPassword {
 
         User user = userRepository.findByUsernameAndPassword(loginInputDTO.getUsername(), loginInputDTO.getPassword());
         if (user != null) {
@@ -47,12 +48,17 @@ public class UserServiceImpl implements UserService,LoginServiceExt {
 
             return loginOutputDTO;
         }
-        return null;
+        throw new InvalidUserNameOrPassword();
     }
 
     @Override
-    public CreateUserOutputDTO create(CreateUserInputDTO createUserInputDTO) {
-        User user = mapperFacade.map(createUserInputDTO, User.class);
+    public CreateUserOutputDTO create(CreateUserInputDTO createUserInputDTO) throws DuplicateUser {
+
+        User user = userRepository.findByUsernameAndPassword(createUserInputDTO.getUsername(), createUserInputDTO.getPassword());
+        if (user != null) {
+            throw new DuplicateUser(createUserInputDTO.getUsername());
+        }
+        user = mapperFacade.map(createUserInputDTO, User.class);
         userRepository.save(user);
         CreateUserOutputDTO createUserOutputDTO = mapperFacade.map(user, CreateUserOutputDTO.class);
         return createUserOutputDTO;
