@@ -11,3 +11,4 @@ deploy:
  app: ayhan-springboot-template
  on:
      repo: ayhanugurlu/springboot-template
+     
