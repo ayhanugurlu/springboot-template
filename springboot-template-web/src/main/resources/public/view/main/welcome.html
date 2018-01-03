@@ -1,8 +1,9 @@
 <div ng-controller="MainController">
    Welcome
-   <table>
-      <tr ng-repeat="userInfo in viewModel">
+   <table align="CENTER" >
+      <tr ng-repeat="userInfo in viewModel.userInfos">
          <td>{{userInfo.username}}</td>
       </tr>
    </table>
+   <button type="button" ng-click="controller.logout()" >Logout!</button>
 </div>

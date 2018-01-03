@@ -8,6 +8,8 @@ public class SpringBootTemplateDataApplication {
 
 
     public static void main(String[] args) {
+
+
         SpringApplication.run(SpringBootTemplateDataApplication.class, args);
     }
 

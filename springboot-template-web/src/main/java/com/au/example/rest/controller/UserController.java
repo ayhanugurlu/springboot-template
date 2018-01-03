@@ -71,7 +71,7 @@ public class UserController {
 
     @ApiOperation(value = "get all user ",
             notes = "get all user information template application.<br/>")
-    @RequestMapping(value = "/infos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/infos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public
     @ResponseBody
     List<UserInfoResp> getUsers() {

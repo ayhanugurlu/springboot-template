@@ -12,13 +12,9 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     User findByUsernameAndPassword(String firstName, String password);
 
-
     User findByUsername(String firstName);
 
     User save(User user);
 
-
     List<User> findAll();
-
-
 }

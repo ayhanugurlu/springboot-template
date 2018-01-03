@@ -1,16 +1,13 @@
 'use strict';
 
 angular.module('templateApp').controller('UserController',
-    ['UserService', '$scope','$state','$window', function (UserService, $scope, $state,$window) {
+    ['UserService', '$scope', '$state', '$window', 'auth', function (UserService, $scope, $state, $window, auth) {
 
         var self = this;
 
 
-
         $scope.loginReg = new LoginReq();
         $scope.signUpReq = new CreateUserReq();
-
-
 
 
         self.login = login;
@@ -22,9 +19,9 @@ angular.module('templateApp').controller('UserController',
         function login() {
             console.log('login');
             console.log($scope.loginReg);
-            $scope.controller.service.login($scope.loginReg).success(function (data, status, headers, config) {
-                window.localStorage.setItem('token', data.token);
-                window.localStorage.setItem('username', $scope.loginReq.username);
+
+            $scope.controller.service.login($scope.loginReg).success(function (data, status, header, config) {
+                window.localStorage.setItem(auth.HEADER_STRING, header(auth.HEADER_STRING));
                 $state.go('main');
                 console.debug("Got response data from server, response message: " + data);
 
@@ -59,8 +56,17 @@ angular.module('templateApp').controller('UserController',
 
         console.log($state.current);
 
-        if($state.current.name.length == 0){
+        var token = window.localStorage.getItem(auth.HEADER_STRING);
+
+        if (token == null && $state.current.name !== "sign-in" && $state.current.name !== "sign-up") {
+            console.log($state.current);
+            console.log($state.current);
+            console.log($state.current);
+
+
             $state.go('sign-in');
+        } else if (token != null && $state.current.name !== "sign-in") {
+            $state.go('main');
         }
 
     }

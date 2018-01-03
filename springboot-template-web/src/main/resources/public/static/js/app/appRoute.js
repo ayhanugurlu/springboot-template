@@ -10,16 +10,16 @@
                 // MAIN
                 .state('main', {
                     url: "/welcome",
-                    templateUrl: "main/welcome.html"
+                    templateUrl: "view/main/welcome.html"
                 })
                 // login
                 .state('sign-up', {
                     url: "/sign-up",
-                    templateUrl: "user/sign-up.html"
+                    templateUrl: "view/user/sign-up.html"
                 })
                 .state('sign-in', {
                     url: "/sign-in",
-                    templateUrl: "user/sign-in.html"
+                    templateUrl: "view/user/sign-in.html"
                 });
 
 

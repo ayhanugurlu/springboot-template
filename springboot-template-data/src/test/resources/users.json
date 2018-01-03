@@ -1,0 +1,18 @@
+{
+  "user": {
+    "data": [
+      {
+        "id": "119bbacd-9c03-4044-867f-4c26e8f715f6",
+        "username": "test",
+        "password":"pass"
+
+      },
+      {
+        "id": "f0f45a6f-77af-44a6-b872-8ee139534afb",
+        "username": "test1",
+        "password":"pass"
+      }
+
+    ]
+  }
+}
