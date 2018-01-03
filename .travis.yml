@@ -10,5 +10,5 @@ deploy:
     secure: W7cVN/SMVsU9LNEiRQnktwfhSvSmcVt0byDgNITfux1Pk7ABT8zYtkwhLGJNG0Q1tNa6cCOi1im/MEoyUFGooWdZBYk/tm8S+icrCsJ+bsedslhafF7FEp5KTOb2omeScMcfYEN9VIN2oy/0Hf2JgL+PfOqCTHFNOfddhQpTxqAzWKeg9fH46EWqOnqODo34woNz+CnCEYxD5sFsiQDQXZNfkKHsYBlvSuPHai9jugd6HF2VYGD0F7raf7dDdVjTW1grNSzW9Xoh/0lFFn4WZwnk4XtVTLyREsolkgkQxLzSLsWVGUrohA+/aAbbXxvsDBoUgyGaATv7Ut/gc5xUgIWlMxzvLQI0eHgMche4Up0Gnu7Rhkg6kEMQge5v9qsfLWYVeuBgPtkXSajJt4nA07ArZw9gg6mwovOkNuzP3er7GK72FgWAjqQk2BOV0jxKUqA+c1J1k5gospfVp7M2WgQs6JUqPeiCkFks53vZAjODzg/c5WPNJhlyZO/Vtbw+D/H6Xf+eyhj0PE9LxMbfzlYJ9hynQ8XqSMo7sd5mrOz25wutzPb0vYMqaRzSlpzvBWdgnm/XGAr7jHgR3efYz1uxX1bvTBkhW1acPYDLXD5pqi+T0pl6jQs0TD3/3JMO5O3hzPwviGjgBA5GCcVI+jgN7058ucd3TiGJAdaj51M=
  app: ayhan-springboot-template
  on:
-     repo: ayhanugurlu/springboot-template
-     
+    repo: ayhanugurlu/springboot-template
+    
