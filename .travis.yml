@@ -2,6 +2,8 @@ language: java
 jdk:
 - oraclejdk8
 script: mvn clean install
+before_deploy:
+    - cd springboot-template-web
 deploy:
   provider: heroku
   api_key:
