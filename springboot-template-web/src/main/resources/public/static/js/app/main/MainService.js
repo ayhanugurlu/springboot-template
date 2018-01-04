@@ -10,7 +10,7 @@ angular.module('templateApp').factory('MainService',
                 console.debug("get users");
                 var req = {
                     method: 'GET',
-                    url: urls.BASE+"infos"
+                    url: "/infos"
                 };
                 return this.http(req);
             };

@@ -10,7 +10,7 @@ angular.module('templateApp').factory('UserService',
                 console.debug("login request");
                 var req = {
                     method: 'POST',
-                    url: urls.BASE+"login",
+                    url: "/login",
                     data: loginRequest
                 };
                 return this.http(req);
@@ -20,7 +20,7 @@ angular.module('templateApp').factory('UserService',
                 console.debug("login request");
                 var req = {
                     method: 'POST',
-                    url: urls.BASE+"sign-up",
+                    url: "/sign-up",
                     data: signUpRequest
                 };
                 return this.http(req);
