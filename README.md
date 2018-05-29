@@ -1,4 +1,4 @@
-Spring boot mongodb,angular,jwt, spring rest example.
+Spring boot mongodb,angular,jwt, spring rest example..
 
 ![alt text](https://travis-ci.org/ayhanugurlu/springboot-template.svg?branch=master "Travis Status")
 
